@@ -1,5 +1,6 @@
 
 import os
+from engine import Engine
 
 class Interface:
 
@@ -11,4 +12,41 @@ class Interface:
     """
     
     def __init__(self):
-        input("give name of an input file: ")
+        done = False
+
+        while not done:
+            print(
+            """      
+            What do you want to do? \n
+            1) Create new file.\n
+            2) Add to existing file.\n
+            3) Randomize existing file.\n
+            4) Quit.
+            """)
+
+            choice = input("Choose here: ")
+
+            try:
+                choice = int(choice)
+            except ValueError:
+                print("Invalid choice. Try again.")
+                #continue
+
+            if choice is (1 or 2 or 3):
+                self.__new_engine = Engine()
+            
+            match choice:
+                case 1:
+                    pass
+                case 2:
+                    pass
+                case 3:
+                    self.randomize()
+                case 4:
+                    done = True
+                case _:
+                    print("Invalid choice. Try again.")
+        
+
+    def randomize(self):
+        input("choose an input file: ")
