@@ -1,4 +1,5 @@
 import os
+import random
 from file_creation import FileCreation
 
 class Engine:
@@ -28,4 +29,10 @@ class Engine:
                 f.write(line + "\n")
         except Exception as error_message:
             raise Exception(error_message)
+
+    def scramble(self):
+        """
+        ok, we use readlines, for loop and random, somehow.
+        """
+        pass
         
