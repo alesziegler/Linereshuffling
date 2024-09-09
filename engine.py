@@ -21,9 +21,11 @@ class Engine:
             result += file + "\n"
         return result
     
-    def write_to_output_file(self,file,line):
+    def write_to_input_file(self,file,line):
+        filepath = self.__path_to_inputs + "/" + file
         try:
-            with (open, file,"a") as f:
+            with open (filepath,"a") as f:
                 f.write(line + "\n")
         except Exception as error_message:
             raise Exception(error_message)
+        
