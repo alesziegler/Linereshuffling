@@ -31,8 +31,13 @@ class Engine:
         except Exception as error_message:
             raise Exception(error_message)
 
-    def scramble(self):
+    def scramble(self,file):
+        path_to_input = self.__path_to_inputs + "/" + file
+        root_name_of_output = file.rsplit('.', 1)[0]
+        output = self.__path_to_outputs + "/" + root_name_of_output + ".txt"
         """
+        How to strip end of the string to a first dot:
+        result = string.rsplit('.', 1)[0]
         ok, we use readlines, for loop and random, somehow.
         Maybe dictionary with random numbers?
         Line count:
