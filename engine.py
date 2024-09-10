@@ -2,30 +2,31 @@ import os
 import random
 from file_creation import FileCreation
 
+
 class Engine:
-    
+
     def __init__(self):
         self.__path_to_inputs = "Inputs"
         self.__path_to_outputs = "Outputs"
 
-    def create_new_file(self,filename,suffix):
-    
+    def create_new_file(self, filename, suffix):
+
         try:
             new_file = self.__path_to_inputs + "/" + filename
-            FileCreation(new_file,suffix)
+            FileCreation(new_file, suffix)
         except Exception as error_message:
             raise Exception(error_message)
 
     def find_existing_files(self):
-        result =""
+        result = ""
         for file in os.listdir(self.__path_to_inputs):
             result += file + "\n"
         return result
-    
-    def write_to_input_file(self,file,line):
+
+    def write_to_input_file(self, file, line):
         filepath = self.__path_to_inputs + "/" + file
         try:
-            with open (filepath,"a") as f:
+            with open(filepath, "a") as f:
                 f.write(line + "\n")
         except Exception as error_message:
             raise Exception(error_message)
@@ -33,6 +34,12 @@ class Engine:
     def scramble(self):
         """
         ok, we use readlines, for loop and random, somehow.
+        Maybe dictionary with random numbers?
+        Line count:
+        with open('filename.txt', 'r') as file:
+            lines = file.readlines()
+            line_count = sum(1 for line in lines)
+        Randomization:
+        result = random.sample(lines, line_count)
         """
         pass
-        
