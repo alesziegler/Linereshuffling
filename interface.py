@@ -38,7 +38,7 @@ class Interface:
                     additional_choice = input(
                         "Do you wish to write a line into this file? ").lower(
                         )
-                    if additional_choice == y:
+                    if additional_choice.lower() == "y":
                         self.add_a_line(created_file)
                 case 2:
                     self.find_files()
