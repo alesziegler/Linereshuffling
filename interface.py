@@ -43,10 +43,11 @@ class Interface:
                 case 2:
                     self.find_files()
                     file = input(
-                        "Write the name of a file to which you wish to add: ")
-                    print(file)
+                        "Write the name of a file to which you wish to add: "
+                    )
                     self.add_a_line(file)
                 case 3:
+                    input("Choose an input file: ")
                     self.randomize()
                 case 4:
                     print("bye")
@@ -77,4 +78,7 @@ class Interface:
             print(e)
 
     def randomize(self):
-        input("choose an input file: ")
+        """
+        Ok, so, there will be two ways 
+        """
+        
