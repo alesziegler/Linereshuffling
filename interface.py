@@ -47,7 +47,6 @@ class Interface:
                     )
                     self.add_a_line(file)
                 case 3:
-                    input("Choose an input file: ")
                     self.randomize()
                 case 4:
                     print("bye")
@@ -78,7 +77,9 @@ class Interface:
             print(e)
 
     def randomize(self):
-        """
-        Ok, so, there will be two ways 
-        """
+        self.find_files()
+        input_file = input("Choose a file you wish to randomize: ")
+        output_file = input("Choose a name of an output file: ")
+        self.__new_engine.scramble(input_file,output_file)
+
         

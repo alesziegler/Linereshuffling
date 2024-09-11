@@ -32,10 +32,10 @@ class Engine:
             raise Exception(error_message)
 
     def scramble(self,input_file,output_file):
-        path_to_input = self.__path_to_inputs + file
+        path_to_input = self.__path_to_inputs + input_file
         #How to strip end of the string to a first dot:
-        root_name_of_output = file.rsplit('.', 1)
-        output = self.__path_to_outputs + root_name_of_output[0] + ".txt"
+        #root_name_of_output = file.rsplit('.', 1)
+        output = self.__path_to_outputs + output_file + ".txt"
         #Line list and count:
         with open(path_to_input, 'r') as input:
             lines = input.readlines()
