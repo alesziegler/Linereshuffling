@@ -34,16 +34,20 @@ class Engine:
     def scramble(self,file):
         path_to_input = self.__path_to_inputs + "/" + file
         #How to strip end of the string to a first dot:
-        root_name_of_output = file.rsplit('.', 1)[0]
-        output = self.__path_to_outputs + "/" + root_name_of_output + ".txt"
+        root_name_of_output = file.rsplit('.', 1)
+        output = self.__path_to_outputs + "/" + root_name_of_output[0] + ".txt"
         #Line list and count:
         with open(path_to_input, 'r') as input:
             lines = input.readlines()
             line_count = sum(1 for line in lines)
-        result = random.sample(lines, line_count)
+        #this is a list and needs to be converted to string:
+        result_list = random.sample(lines, line_count)
+        result = ""
+        for line in result_list:
+            result += line
         #input saving:
         with open(output,"w") as o:
-            output.write(result)
+            o.write(result)
         """
         ok, we use readlines, for loop and random, somehow.
         Maybe dictionary with random numbers?
@@ -54,4 +58,4 @@ class Engine:
         Randomization:
         result = random.sample(lines, line_count)
         """
-        pass
+        
